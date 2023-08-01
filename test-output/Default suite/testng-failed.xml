@@ -8,6 +8,7 @@
           <include name="scrollFeature"/>
           <include name="scrollToEnd"/>
           <include name="beforeSuite"/>
+          <include name="frequencyOfContentReload"/>
           <include name="imageVisiblity"/>
           <include name="afterSuite"/>
           <include name="searchProduct"/>

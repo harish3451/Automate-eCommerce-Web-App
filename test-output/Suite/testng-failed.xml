@@ -5,7 +5,9 @@
     <classes>
       <class name="com.ecommerce.flipkartTest">
         <methods>
+          <include name="scrollToEnd"/>
           <include name="beforeSuite"/>
+          <include name="frequencyOfContentReload"/>
           <include name="afterSuite"/>
           <include name="TestOnDifferentBrowser"/>
         </methods>

@@ -4,6 +4,7 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotEquals;
 import static org.testng.Assert.assertTrue;
 
+import java.awt.Scrollbar;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
@@ -22,12 +23,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.google.common.io.Files;
+
+import io.opentelemetry.exporter.logging.SystemOutLogRecordExporter;
 
 public class flipkartTest {
 	
@@ -116,14 +120,29 @@ public class flipkartTest {
 		System.out.println("===================================================");
   }
   
-  @Test(groups = "test4", dependsOnGroups = "test3")
+  @Test(groups="test4", dependsOnGroups = "test3")
+  public void frequencyOfContentReload() throws InterruptedException {
+	  Actions actions = new Actions(driver);
+	  long start = System.currentTimeMillis();
+	  WebElement nextPage = driver.findElement(By.cssSelector("#container > div > div._36fx1h._6t1WkM._3HqJxg > div._1YokD2._2GoDe3 > div:nth-child(2) > div:nth-child(26) > div > div > nav > a:nth-child(3)"));
+	  
+	  actions.scrollToElement(nextPage).perform();
+	  nextPage.click();
+	  driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+	  long end = System.currentTimeMillis();
+	  System.out.println("Content reload frequency =" +(end-start)+" milli second");
+	  
+	  Thread.sleep(10000);
+  }
+  
+  @Test(groups = "test5", dependsOnGroups = "test4")
   public void scrollToEnd() throws WebDriverException, IOException {
 	  WebElement body = driver.findElement(By.tagName("body"));
 	  body.sendKeys(Keys.END);
 	  takeScreenShot(driver);
   }
   
-  @Test(groups = "test5", dependsOnGroups = "test4")
+  @Test(groups = "test6", dependsOnGroups = "test5")
   public void TestOnDifferentBrowser() throws WebDriverException, IOException {
 	  System.out.println("\n===================================================");
 	  driver.get("https://www.flipkart.com/");
