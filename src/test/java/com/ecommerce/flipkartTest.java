@@ -55,7 +55,7 @@ public class flipkartTest {
 		endTime = System.currentTimeMillis();
 		System.out.println("end time ="+endTime);
 		System.out.println("load time ="+ (endTime-startTime)+" milli second");
-		System.out.println("\n===================================================");
+		System.out.println("===================================================");
 		takeScreenShot(driver);
   }
   
@@ -79,7 +79,7 @@ public class flipkartTest {
   public void imageVisiblity() {
 	  List<WebElement> images = driver.findElements(By.tagName("img"));
 		int WebHeight = driver.manage().window().getSize().getHeight();
-		System.out.println("\n===================================================\nImages\n\n");
+		System.out.println("===================================================\nImages\n");
 		for(WebElement img:images) {
 			int imageLocation = img.getLocation().getY();
 			
@@ -96,14 +96,13 @@ public class flipkartTest {
 				System.out.println("Image is out of screen height = "+img.getAttribute("src"));
 			}
 		}
-		System.out.println("\n===================================================");
+		System.out.println("===================================================");
   }
   
   @Test(groups = "test3", dependsOnGroups = "test2")
   public void scrollFeature() throws InterruptedException, WebDriverException, IOException {
 	  System.out.println("\n===================================================");
 	  	WebElement body = driver.findElement(By.tagName("body"));
-	  	System.out.println(body.getLocation());
 	  	int tabHeight=driver.manage().window().getSize().getHeight();
 	  	int contentHeight=body.getSize().height;
 		System.out.println("windows tab height ="+ tabHeight);
@@ -114,7 +113,7 @@ public class flipkartTest {
 		System.out.println("This page has scroll feature");
 		Thread.sleep(2000);
 		takeScreenShot(driver);
-		System.out.println("\n===================================================");
+		System.out.println("===================================================");
   }
   
   @Test(groups = "test4", dependsOnGroups = "test3")
@@ -144,8 +143,11 @@ public class flipkartTest {
 	  
 	  assertNotEquals(screenSize.get("chrome"), screenSize.get("Firefox"));
 	  assertNotEquals(screenSize.get("Firefox"),screenSize.get("Edge"));
-	  System.out.println("\n===================================================");
+	  System.out.println("===================================================");
   }
+  
+  
+  
   
   
 @BeforeSuite
