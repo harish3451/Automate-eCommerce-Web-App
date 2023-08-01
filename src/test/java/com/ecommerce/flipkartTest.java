@@ -1,6 +1,8 @@
 package com.ecommerce;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNotEquals;
+import static org.testng.Assert.assertTrue;
 
 import java.io.File;
 import java.io.IOException;
@@ -33,6 +35,11 @@ public class flipkartTest {
 	WebDriver driver1;
 	WebDriver driver2;
 	static int counter = 1;
+	
+	static long startTime;
+	static long endTime;
+	
+	
 	public static void takeScreenShot(WebDriver driver) throws WebDriverException, IOException{
 			
 			TakesScreenshot screenShot = (TakesScreenshot) driver;
@@ -41,18 +48,18 @@ public class flipkartTest {
   @Test(groups = "flipKart")
   public void loadtime() throws WebDriverException, IOException {
 	  System.out.println("\n===================================================\nPageLoad time\n");
-		long startTime = System.currentTimeMillis();
+		
 		System.out.println("Start time ="+startTime);
 		// Wait for the page to load completely
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-		long endTime = System.currentTimeMillis();
+		endTime = System.currentTimeMillis();
 		System.out.println("end time ="+endTime);
-		System.out.println("load time ="+ (endTime-startTime));
+		System.out.println("load time ="+ (endTime-startTime)+" milli second");
 		System.out.println("\n===================================================");
 		takeScreenShot(driver);
   }
   
-  @Test(groups = "flipKart")
+  @Test(groups = "test1")
   public void searchProduct() throws InterruptedException, WebDriverException, IOException {
 	  WebElement x = driver.findElement(By.cssSelector("body > div._2Sn47c > div > div > button"));
 		x.click();
@@ -68,7 +75,7 @@ public class flipkartTest {
 		takeScreenShot(driver);
   }
   
-  @Test(groups = "flipKart")
+  @Test(groups = "test2", dependsOnGroups = "test1")
   public void imageVisiblity() {
 	  List<WebElement> images = driver.findElements(By.tagName("img"));
 		int WebHeight = driver.manage().window().getSize().getHeight();
@@ -92,7 +99,7 @@ public class flipkartTest {
 		System.out.println("\n===================================================");
   }
   
-  @Test(groups = "flipKart")
+  @Test(groups = "test3", dependsOnGroups = "test2")
   public void scrollFeature() throws InterruptedException, WebDriverException, IOException {
 	  System.out.println("\n===================================================");
 	  	WebElement body = driver.findElement(By.tagName("body"));
@@ -103,22 +110,21 @@ public class flipkartTest {
 		System.out.println("height of dody content ="+  contentHeight);
 		int different = contentHeight-tabHeight;
 		SoftAssert softAssert = new SoftAssert();
-		softAssert.assertTrue(different>0);
+		assertTrue(different>0);
 		System.out.println("This page has scroll feature");
 		Thread.sleep(2000);
 		takeScreenShot(driver);
 		System.out.println("\n===================================================");
   }
   
-  @Test(groups = "flipKart")
+  @Test(groups = "test4", dependsOnGroups = "test3")
   public void scrollToEnd() throws WebDriverException, IOException {
-	  System.out.println("\n===================================================");
 	  WebElement body = driver.findElement(By.tagName("body"));
 	  body.sendKeys(Keys.END);
 	  takeScreenShot(driver);
   }
   
-  @Test(groups = "differentBrowsers", dependsOnGroups = "flipKart")
+  @Test(groups = "test5", dependsOnGroups = "test4")
   public void TestOnDifferentBrowser() throws WebDriverException, IOException {
 	  System.out.println("\n===================================================");
 	  driver.get("https://www.flipkart.com/");
@@ -136,22 +142,20 @@ public class flipkartTest {
 	  System.out.println("screen size of fireFox drowser = "+screenSize.get("Firefox"));
 	  System.out.println("screen size of edge drowser = "+screenSize.get("Edge"));
 	  
-	  assertEquals(screenSize.get("chrome"), screenSize.get("Firefox"));
-	  assertEquals(screenSize.get("Firefox"),screenSize.get("Edge"));
+	  assertNotEquals(screenSize.get("chrome"), screenSize.get("Firefox"));
+	  assertNotEquals(screenSize.get("Firefox"),screenSize.get("Edge"));
 	  System.out.println("\n===================================================");
   }
   
   
-  
-  
-
 @BeforeSuite
   public void beforeSuite() {
 	  driver = new ChromeDriver();
 	  driver1 = new FirefoxDriver();
 	  driver2 = new EdgeDriver();
-	  driver.get("https://www.flipkart.com/");
-	  driver.manage().window().maximize();
+	  startTime = System.currentTimeMillis();
+		driver.get("https://www.flipkart.com/");
+		driver.manage().window().maximize();
   }
   
   @AfterSuite

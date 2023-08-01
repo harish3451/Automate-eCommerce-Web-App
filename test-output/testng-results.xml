@@ -1,98 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="5" failed="1" skipped="0">
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-08-01T13:00:52 IST" name="Suite" finished-at="2023-08-01T13:01:19 IST" duration-ms="26725">
+  <suite started-at="2023-08-01T14:39:37 IST" name="Default suite" finished-at="2023-08-01T14:40:06 IST" duration-ms="29455">
     <groups>
-      <group name="flipKart">
-        <method signature="flipkartTest.imageVisiblity()[pri:0, instance:com.ecommerce.flipkartTest@74ea2410]" name="imageVisiblity" class="com.ecommerce.flipkartTest"/>
-        <method signature="flipkartTest.loadtime()[pri:0, instance:com.ecommerce.flipkartTest@74ea2410]" name="loadtime" class="com.ecommerce.flipkartTest"/>
-        <method signature="flipkartTest.scrollFeature()[pri:0, instance:com.ecommerce.flipkartTest@74ea2410]" name="scrollFeature" class="com.ecommerce.flipkartTest"/>
+      <group name="test4">
         <method signature="flipkartTest.scrollToEnd()[pri:0, instance:com.ecommerce.flipkartTest@74ea2410]" name="scrollToEnd" class="com.ecommerce.flipkartTest"/>
-        <method signature="flipkartTest.searchProduct()[pri:0, instance:com.ecommerce.flipkartTest@74ea2410]" name="searchProduct" class="com.ecommerce.flipkartTest"/>
-      </group> <!-- flipKart -->
-      <group name="differentBrowsers">
+      </group> <!-- test4 -->
+      <group name="test5">
         <method signature="flipkartTest.TestOnDifferentBrowser()[pri:0, instance:com.ecommerce.flipkartTest@74ea2410]" name="TestOnDifferentBrowser" class="com.ecommerce.flipkartTest"/>
-      </group> <!-- differentBrowsers -->
+      </group> <!-- test5 -->
+      <group name="test2">
+        <method signature="flipkartTest.imageVisiblity()[pri:0, instance:com.ecommerce.flipkartTest@74ea2410]" name="imageVisiblity" class="com.ecommerce.flipkartTest"/>
+      </group> <!-- test2 -->
+      <group name="test3">
+        <method signature="flipkartTest.scrollFeature()[pri:0, instance:com.ecommerce.flipkartTest@74ea2410]" name="scrollFeature" class="com.ecommerce.flipkartTest"/>
+      </group> <!-- test3 -->
+      <group name="flipKart">
+        <method signature="flipkartTest.loadtime()[pri:0, instance:com.ecommerce.flipkartTest@74ea2410]" name="loadtime" class="com.ecommerce.flipkartTest"/>
+      </group> <!-- flipKart -->
+      <group name="test1">
+        <method signature="flipkartTest.searchProduct()[pri:0, instance:com.ecommerce.flipkartTest@74ea2410]" name="searchProduct" class="com.ecommerce.flipkartTest"/>
+      </group> <!-- test1 -->
     </groups>
-    <test started-at="2023-08-01T13:00:52 IST" name="Test" finished-at="2023-08-01T13:01:19 IST" duration-ms="26725">
+    <test started-at="2023-08-01T14:39:37 IST" name="Default test" finished-at="2023-08-01T14:40:06 IST" duration-ms="29455">
       <class name="com.ecommerce.flipkartTest">
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:com.ecommerce.flipkartTest@74ea2410]" started-at="2023-08-01T13:00:38 IST" name="beforeSuite" finished-at="2023-08-01T13:00:52 IST" duration-ms="14049" status="PASS">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:com.ecommerce.flipkartTest@74ea2410]" started-at="2023-08-01T14:39:22 IST" name="beforeSuite" finished-at="2023-08-01T14:39:37 IST" duration-ms="15132" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method signature="imageVisiblity()[pri:0, instance:com.ecommerce.flipkartTest@74ea2410]" started-at="2023-08-01T13:00:52 IST" name="imageVisiblity" finished-at="2023-08-01T13:00:56 IST" duration-ms="3770" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- imageVisiblity -->
-        <test-method signature="loadtime()[pri:0, instance:com.ecommerce.flipkartTest@74ea2410]" started-at="2023-08-01T13:00:56 IST" name="loadtime" finished-at="2023-08-01T13:00:57 IST" duration-ms="425" status="PASS">
+        <test-method signature="loadtime()[pri:0, instance:com.ecommerce.flipkartTest@74ea2410]" started-at="2023-08-01T14:39:37 IST" name="loadtime" finished-at="2023-08-01T14:39:38 IST" duration-ms="696" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadtime -->
-        <test-method signature="scrollFeature()[pri:0, instance:com.ecommerce.flipkartTest@74ea2410]" started-at="2023-08-01T13:00:57 IST" name="scrollFeature" finished-at="2023-08-01T13:00:59 IST" duration-ms="2379" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- scrollFeature -->
-        <test-method signature="scrollToEnd()[pri:0, instance:com.ecommerce.flipkartTest@74ea2410]" started-at="2023-08-01T13:00:59 IST" name="scrollToEnd" finished-at="2023-08-01T13:00:59 IST" duration-ms="486" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- scrollToEnd -->
-        <test-method signature="searchProduct()[pri:0, instance:com.ecommerce.flipkartTest@74ea2410]" started-at="2023-08-01T13:00:59 IST" name="searchProduct" finished-at="2023-08-01T13:01:05 IST" duration-ms="5294" status="PASS">
+        <test-method signature="searchProduct()[pri:0, instance:com.ecommerce.flipkartTest@74ea2410]" started-at="2023-08-01T14:39:38 IST" name="searchProduct" finished-at="2023-08-01T14:39:43 IST" duration-ms="5896" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchProduct -->
-        <test-method signature="TestOnDifferentBrowser()[pri:0, instance:com.ecommerce.flipkartTest@74ea2410]" started-at="2023-08-01T13:01:05 IST" name="TestOnDifferentBrowser" depends-on-groups="flipKart" finished-at="2023-08-01T13:01:19 IST" duration-ms="14242" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [(1291, 747)] but found [(1552, 840)]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [(1291, 747)] but found [(1552, 840)]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1578)
-at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-at org.testng.Assert.assertEquals(Assert.java:132)
-at org.testng.Assert.assertEquals(Assert.java:644)
-at com.ecommerce.flipkartTest.TestOnDifferentBrowser(flipkartTest.java:139)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method signature="imageVisiblity()[pri:0, instance:com.ecommerce.flipkartTest@74ea2410]" started-at="2023-08-01T14:39:43 IST" name="imageVisiblity" depends-on-groups="test1" finished-at="2023-08-01T14:39:49 IST" duration-ms="5271" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- imageVisiblity -->
+        <test-method signature="scrollFeature()[pri:0, instance:com.ecommerce.flipkartTest@74ea2410]" started-at="2023-08-01T14:39:49 IST" name="scrollFeature" depends-on-groups="test2" finished-at="2023-08-01T14:39:52 IST" duration-ms="2822" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scrollFeature -->
+        <test-method signature="scrollToEnd()[pri:0, instance:com.ecommerce.flipkartTest@74ea2410]" started-at="2023-08-01T14:39:52 IST" name="scrollToEnd" depends-on-groups="test3" finished-at="2023-08-01T14:39:52 IST" duration-ms="700" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scrollToEnd -->
+        <test-method signature="TestOnDifferentBrowser()[pri:0, instance:com.ecommerce.flipkartTest@74ea2410]" started-at="2023-08-01T14:39:52 IST" name="TestOnDifferentBrowser" depends-on-groups="test4" finished-at="2023-08-01T14:40:06 IST" duration-ms="13909" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestOnDifferentBrowser -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.ecommerce.flipkartTest@74ea2410]" started-at="2023-08-01T13:01:19 IST" name="afterSuite" finished-at="2023-08-01T13:01:23 IST" duration-ms="4332" status="PASS">
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.ecommerce.flipkartTest@74ea2410]" started-at="2023-08-01T14:40:06 IST" name="afterSuite" finished-at="2023-08-01T14:40:11 IST" duration-ms="4814" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
       </class> <!-- com.ecommerce.flipkartTest -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
