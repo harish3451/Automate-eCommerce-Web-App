@@ -14,6 +14,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -101,7 +102,10 @@ public class flipkartTest {
 			}
 		}
 		System.out.println("===================================================");
+		
   }
+  
+  
   
   @Test(groups = "test3", dependsOnGroups = "test2")
   public void scrollFeature() throws InterruptedException, WebDriverException, IOException {
@@ -112,7 +116,7 @@ public class flipkartTest {
 		System.out.println("windows tab height ="+ tabHeight);
 		System.out.println("height of dody content ="+  contentHeight);
 		int different = contentHeight-tabHeight;
-		SoftAssert softAssert = new SoftAssert();
+		
 		assertTrue(different>0);
 		System.out.println("This page has scroll feature");
 		Thread.sleep(2000);
@@ -121,28 +125,30 @@ public class flipkartTest {
   }
   
   @Test(groups="test4", dependsOnGroups = "test3")
-  public void frequencyOfContentReload() throws InterruptedException {
+  public void frequencyOfContentReload() throws InterruptedException, WebDriverException, IOException {
 	  Actions actions = new Actions(driver);
 	  long start = System.currentTimeMillis();
 	  WebElement nextPage = driver.findElement(By.cssSelector("#container > div > div._36fx1h._6t1WkM._3HqJxg > div._1YokD2._2GoDe3 > div:nth-child(2) > div:nth-child(26) > div > div > nav > a:nth-child(3)"));
 	  
 	  actions.scrollToElement(nextPage).perform();
 	  nextPage.click();
-	  driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+	  Thread.sleep(3000);
+	  takeScreenShot(driver);
 	  long end = System.currentTimeMillis();
 	  System.out.println("Content reload frequency =" +(end-start)+" milli second");
 	  
-	  Thread.sleep(10000);
-  }
-  
-  @Test(groups = "test5", dependsOnGroups = "test4")
-  public void scrollToEnd() throws WebDriverException, IOException {
-	  WebElement body = driver.findElement(By.tagName("body"));
-	  body.sendKeys(Keys.END);
-	  takeScreenShot(driver);
+	  
   }
   
   @Test(groups = "test6", dependsOnGroups = "test5")
+  public void scrollToEnd() throws WebDriverException, IOException, InterruptedException {
+	  WebElement body = driver.findElement(By.tagName("body"));
+	  body.sendKeys(Keys.END);
+	  Thread.sleep(3000);
+	  takeScreenShot(driver);
+  }
+  
+  @Test(groups = "test7", dependsOnGroups = "test6")
   public void TestOnDifferentBrowser() throws WebDriverException, IOException {
 	  System.out.println("\n===================================================");
 	  driver.get("https://www.flipkart.com/");
@@ -165,9 +171,14 @@ public class flipkartTest {
 	  System.out.println("===================================================");
   }
   
-  
-  
-  
+  @Test(groups="test5" ,dependsOnGroups = "test4")
+  public void verifyImageDownload() {
+	  JavascriptExecutor js = (JavascriptExecutor) driver;
+	  String state = (String) js.executeScript("return document.readyState;");
+	  
+	  assertEquals("Complete".toLowerCase(), state,"state");
+	  System.out.println("As above assert test passes so image is downloaded just before the user scrolls to its position and gets displayed in time");
+  }
   
 @BeforeSuite
   public void beforeSuite() {
