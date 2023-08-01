@@ -5,10 +5,14 @@
     <classes>
       <class name="com.ecommerce.flipkartTest">
         <methods>
+          <include name="scrollFeature"/>
+          <include name="verifyImageDownload"/>
           <include name="scrollToEnd"/>
           <include name="beforeSuite"/>
           <include name="frequencyOfContentReload"/>
+          <include name="imageVisiblity"/>
           <include name="afterSuite"/>
+          <include name="searchProduct"/>
           <include name="TestOnDifferentBrowser"/>
         </methods>
       </class> <!-- com.ecommerce.flipkartTest -->

@@ -4,7 +4,6 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotEquals;
 import static org.testng.Assert.assertTrue;
 
-import java.awt.Scrollbar;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
@@ -28,11 +27,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 
 import com.google.common.io.Files;
-
-import io.opentelemetry.exporter.logging.SystemOutLogRecordExporter;
 
 public class flipkartTest {
 	
